@@ -1,0 +1,36 @@
+body {
+  font-family: 'Roboto';
+}
+
+#menu {
+  padding: 0.5rem 0.9rem;
+}
+
+#menu .navbar-brand {
+  color: #000;
+  font-weight: 800;
+  font-family: 'Roboto';
+}
+
+#menu .navbar-toggler {
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  color: #000;
+  box-shadow: none;
+}
+
+#menu .navbar-toggler:focus {
+  color: #000a;
+}
+
+#menu .nav-link {
+  color: #000;
+  font-family: 'Roboto';
+}
+
+#bottombar p {
+  padding: 10px;
+  color: #9a9a9a;
+}
+

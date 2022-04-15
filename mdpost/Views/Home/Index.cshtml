@@ -1,0 +1,6 @@
+﻿@using Westwind.AspNetCore.Markdown
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@Markdown.ParseHtmlStringFromFile((string)ViewData["MarkdownFile"])
