@@ -8,7 +8,7 @@ If you ACTUALLY want to use it, you can rebuild it for yourself.
 
 ## Requirements
 
-.NET Core 6 SDK - to build and run project
+.NET Core 6 SDK - to build and run project  
 ASP.NET Core runtime - to run project
 
 ## How to run?
