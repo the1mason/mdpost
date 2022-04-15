@@ -26,10 +26,7 @@ namespace mdpost.Controllers
         public IActionResult Index()
         {
             var path = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/posts/index.md";
-            if (!System.IO.File.Exists(path))
-            {
-                return StatusCode(404);
-            }
+
             ViewData["MarkdownFile"] = path;
             return View();
         }
@@ -38,10 +35,6 @@ namespace mdpost.Controllers
         public IActionResult Index(string mdname)
         {
             var path = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/posts/{mdname}.md";
-            if (!System.IO.File.Exists(path))
-            {
-                return StatusCode(404);
-            }
             ViewData["MarkdownFile"] = path;
             return View();
         }
@@ -49,7 +42,7 @@ namespace mdpost.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View();
         }
     }
 }

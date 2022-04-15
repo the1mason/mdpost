@@ -4,13 +4,14 @@ body {
 
 #menu {
   padding: 0.5rem 0.9rem;
+  margin-bottom: 20px;
 }
 
 #menu .navbar-brand {
   color: #000;
   font-weight: 800;
   font-family: 'Roboto';
-  margin-bottom: 3px;
+  margin-bottom: 1px;
 }
 
 #menu .navbar-toggler {

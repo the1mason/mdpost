@@ -22,7 +22,7 @@ namespace mdpost
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls("http://the1mason.com:2565");
+                    webBuilder.UseUrls(new string[] { "http://mdpost.mdpost:80", "https://mdpost.mdpost:443" });
                 });
     }
 }

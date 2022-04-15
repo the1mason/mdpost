@@ -1,6 +1,14 @@
-﻿@using Westwind.AspNetCore.Markdown
+﻿@using System.IO;
+@using Westwind.AspNetCore.Markdown
 @{
     ViewData["Title"] = "Home Page";
 }
 
-@Markdown.ParseHtmlStringFromFile((string)ViewData["MarkdownFile"])
+@if (System.IO.File.Exists((string)ViewData["MarkdownFile"]))
+{
+    @Markdown.ParseHtmlStringFromFile((string)ViewData["MarkdownFile"])
+}
+else
+{
+    @Markdown.ParseHtmlString("# File not found.  \n## [Home](/)")
+}
