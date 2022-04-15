@@ -6,6 +6,10 @@ This is very simple asp.net core app for posting static markdown files.
 There's a lot of hardcoded variables including templates, menu items, titles and other things.
 If you ACTUALLY want to use it, you can rebuild it for yourself.  
 
+## How to run?
+Download source code, modify it if you want.
+Run using `dotnet run --project <path>`.  
+If you want to compile it, use `dotnet publish` command.
 
 ## Creating first post  
 - Create folder called "posts" in the same place where binaries located (/bin/posts)
