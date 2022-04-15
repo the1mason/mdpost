@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
+using System.IO;
+using System.Reflection;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -23,15 +25,20 @@ namespace mdpost.Controllers
 
         public IActionResult Index()
         {
-            ViewData["MarkdownFile"] = "~/posts/index.md";
+            var path = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/posts/index.md";
+            if (!System.IO.File.Exists(path))
+            {
+                return StatusCode(404);
+            }
+            ViewData["MarkdownFile"] = path;
             return View();
         }
 
         [Route("{mdname}")]
         public IActionResult Index(string mdname)
         {
-            var path = "~/posts/" + mdname + ".md";
-            if (!System.IO.File.Exists($"{_environment.WebRootPath}/posts/{mdname}.md"))
+            var path = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/posts/{mdname}.md";
+            if (!System.IO.File.Exists(path))
             {
                 return StatusCode(404);
             }

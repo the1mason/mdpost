@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\posts\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.8.0" />
   </ItemGroup>
 
