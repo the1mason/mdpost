@@ -12,8 +12,10 @@ namespace mdpost
 {
     public class Program
     {
+        public static Models.ConfigModel config { get; set; }
         public static void Main(string[] args)
         {
+            config = Utils.ConfigUtils.ReadConfig();
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -22,7 +24,7 @@ namespace mdpost
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                    webBuilder.UseUrls(new string[] { "http://mdpost.mdpost:80", "https://mdpost.mdpost:443" });
+                    webBuilder.UseUrls(config.AppUrls);
                 });
     }
 }

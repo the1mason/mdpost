@@ -36,3 +36,11 @@ body {
   color: #9a9a9a;
 }
 
+.layout a {
+    color: #3721ff;
+}
+
+.layout a:hover {
+    color: #2916db;
+}
+

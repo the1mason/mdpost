@@ -1,14 +1,11 @@
-﻿@using System.IO;
+﻿@model HomeViewModel
+@using System.IO
 @using Westwind.AspNetCore.Markdown
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = @Model.Title + " - " + @Model.AppName;
+    ViewData["AppName"] = @Model.AppName;
+    ViewData["MenuItems"] = @Model.MenuItems;
 }
 
-@if (System.IO.File.Exists((string)ViewData["MarkdownFile"]))
-{
-    @Markdown.ParseHtmlStringFromFile((string)ViewData["MarkdownFile"])
-}
-else
-{
-    @Markdown.ParseHtmlString("# File not found.  \n## [Home](/)")
-}
+@Markdown.ParseHtmlStringFromFile(Model.Path);
+

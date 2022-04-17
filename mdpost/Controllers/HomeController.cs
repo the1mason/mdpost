@@ -16,27 +16,42 @@ namespace mdpost.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IWebHostEnvironment _environment;
+        private HomeViewModel hvm;
 
         public HomeController(ILogger<HomeController> logger, IWebHostEnvironment environment)
         {
             _logger = logger;
             _environment = environment;
+            hvm = new();
+            hvm.AppName = "TestApp";
+            hvm.Title = "PageTitle!";
+            hvm.MenuItems = new List<(string text, string link)> { ("Home", "/"), ("Projects", "/projects"), ("Contacts", "/contacts") };
         }
 
         public IActionResult Index()
         {
-            var path = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/posts/index.md";
+            var path = $"~/posts/index.md";
 
-            ViewData["MarkdownFile"] = path;
-            return View();
+            if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
+            {
+                return NotFound();
+            }
+            hvm.Path = path;
+            return View(hvm);
         }
 
         [Route("{mdname}")]
         public IActionResult Index(string mdname)
         {
-            var path = $"{Path.GetDirectoryName(Assembly.GetEntryAssembly().Location)}/posts/{mdname}.md";
+            var path = $"~/posts/{mdname}.md";
             ViewData["MarkdownFile"] = path;
-            return View();
+            if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
+            {
+                return NotFound();
+            }
+            hvm.Path = path;
+            hvm.ShowContent = true;
+            return View(hvm);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

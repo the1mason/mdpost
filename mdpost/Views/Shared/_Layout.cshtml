@@ -3,26 +3,26 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - mdpost</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:500,700i,900&amp;subset=cyrillic,cyrillic-ext&amp;display=swap">
-    <link rel="stylesheet" href="~/assets/fonts/font-awesome.min.css"/>
-    <link rel="stylesheet" href="~/assets/css/styles.css"/>
+    <link rel="stylesheet" href="~/assets/fonts/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/assets/css/styles.css" />
     <link rel="stylesheet" href="~/assets/bootstrap/css/bootstrap.min.css" />
 </head>
-<body>
+<body class="layout">
     <header>
         <nav class="navbar navbar-light navbar-expand-md" id="menu">
             <div class="container-fluid">
-                <!--Change it's content to your website title-->
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">mdpost</a>
+                <a class="navbar-brand" href="/">@ViewData["AppName"]</a>
                 <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
                     <i class="fa fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
                     <ul class="navbar-nav">
-                        <!--You can add your items with your own links-->
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link"  href="/">Your-Item</a></li>
+                        @foreach ((string text,string link) pair in (ViewData["MenuItems"] as List<(string,string)>))
+                        {
+                            <li class="nav-item"><a class="nav-link" href="@pair.link">@pair.text</a></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 page-body">
-            @RenderBody()
+                @RenderBody()
             </div>
         </div>
     </div>
