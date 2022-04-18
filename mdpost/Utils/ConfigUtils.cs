@@ -8,7 +8,7 @@ namespace mdpost.Utils
     {
         public static Models.ConfigModel ReadConfig()
         {
-            string path = System.IO.Path.Combine(System.Reflection.Assembly.GetExecutingAssembly().Location, "vconfig.json");
+            string path = System.IO.Path.Combine(System.IO.Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).ToString(), "vconfig.json");
             if (System.IO.File.Exists(path))
             {
                 string content = System.IO.File.ReadAllText(path);

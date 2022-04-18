@@ -15,3 +15,12 @@ ____
 ##### - [My projects](projects)
 ##### - [Blog](blog)
 ##### - [Contacts](contacts)
+
+`test code`
+
+```csharp
+public static void Main(string[] args)
+{
+    Console.WriteLine(">:D");
+}
+```

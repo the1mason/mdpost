@@ -1,46 +1,69 @@
+::selection {
+    background: #3721ff;
+    color: #fff;
+}
+
 body {
-  font-family: 'Roboto';
+    font-family: 'Roboto';
 }
 
 #menu {
-  padding: 0.5rem 0.9rem;
-  margin-bottom: 20px;
+    padding: 0.5rem 0.9rem;
+    margin-bottom: 20px;
 }
 
-#menu .navbar-brand {
-  color: #000;
-  font-weight: 800;
-  font-family: 'Roboto';
-  margin-bottom: 1px;
-}
+    #menu .navbar-brand {
+        color: #000;
+        font-weight: 800;
+        font-family: 'Roboto';
+        margin-bottom: 1px;
+    }
 
-#menu .navbar-toggler {
-  border: none;
-  padding: 0;
-  font-size: 20px;
-  color: #000;
-  box-shadow: none;
-}
+    #menu .navbar-toggler {
+        border: none;
+        padding: 0;
+        font-size: 20px;
+        color: #000;
+        box-shadow: none;
+    }
 
-#menu .navbar-toggler:focus {
-  color: #000a;
-}
+        #menu .navbar-toggler:focus {
+            color: #000a;
+        }
 
-#menu .nav-link {
-  color: #000;
-  font-family: 'Roboto';
-}
+    #menu .nav-link {
+        color: #000;
+        font-family: 'Roboto';
+    }
 
 #bottombar p {
-  padding: 10px;
-  color: #9a9a9a;
+    padding: 10px;
+    color: #9a9a9a;
 }
 
 .layout a {
     color: #3721ff;
 }
 
-.layout a:hover {
-    color: #2916db;
+    .layout a:hover {
+        color: #2916db;
+    }
+
+.page-body {
+    font-family: 'Roboto';
 }
 
+    .page-body code {
+        background: #0000000d;
+        padding: 2px 6px 2px 6px;
+        border-radius: 5px;
+    }
+
+    .page-body pre {
+        background: #0000000d;
+        padding: 10px;
+    }
+
+        .page-body pre code {
+            background: #0000;
+        }

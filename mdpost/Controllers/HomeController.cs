@@ -23,9 +23,8 @@ namespace mdpost.Controllers
             _logger = logger;
             _environment = environment;
             hvm = new();
-            hvm.AppName = "TestApp";
-            hvm.Title = "PageTitle!";
-            hvm.MenuItems = new List<(string text, string link)> { ("Home", "/"), ("Projects", "/projects"), ("Contacts", "/contacts") };
+            hvm.AppName = Program.config.AppName;
+            hvm.MenuItems = Program.config.MenuItems;
         }
 
         public IActionResult Index()
@@ -37,6 +36,7 @@ namespace mdpost.Controllers
                 return NotFound();
             }
             hvm.Path = path;
+            hvm.Title = path.Substring(2);
             return View(hvm);
         }
 
@@ -50,7 +50,6 @@ namespace mdpost.Controllers
                 return NotFound();
             }
             hvm.Path = path;
-            hvm.ShowContent = true;
             return View(hvm);
         }
 
