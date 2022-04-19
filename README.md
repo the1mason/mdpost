@@ -29,8 +29,5 @@ BUT you can't use nested folders for your posts (at least for now), so every pos
 I am still working on this project, so that's not final version.  
 In the future I will add some features:
 
-- Commandline args for configs (customizable urls, ports and other)
 - Nested folders
 - Simple API for posting
-- View counter
-- Maybe comments (MAYBE)
