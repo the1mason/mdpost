@@ -30,27 +30,51 @@ namespace mdpost.Controllers
         public IActionResult Index()
         {
             var path = $"~/posts/index.md";
-
+            HomeViewModel lhvm = new();
+            lhvm = hvm;
             if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
             {
-                return NotFound();
+                return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+                {
+                    MenuItems = lhvm.MenuItems,
+                    AppName = lhvm.AppName,
+                    Title = "Error",
+                    Code = 404,
+                    Message = "Index file not found!",
+                    Description = "Can't find index.md file"
+                });
             }
-            hvm.Path = path;
-            hvm.Title = path.Substring(2);
-            return View(hvm);
+            lhvm.Path = path;
+            string filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
+            filename = filename.Replace(filename[0], char.ToUpper(filename[0]));
+            lhvm.Title = filename;
+            return View(lhvm);
         }
 
         [Route("{mdname}")]
         public IActionResult Index(string mdname)
         {
+            HomeViewModel lhvm = new();
+            lhvm = hvm;
             var path = $"~/posts/{mdname}.md";
             ViewData["MarkdownFile"] = path;
             if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
             {
-                return NotFound();
+                return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
+                {
+                    MenuItems = lhvm.MenuItems,
+                    AppName = lhvm.AppName,
+                    Title = "Error",
+                    Code = 404,
+                    Message = "File not found!",
+                    Description = "Can't find specified file"
+                });
             }
-            hvm.Path = path;
-            return View(hvm);
+            string filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
+            filename = filename[0].ToString().ToUpper() + filename.Substring(1);
+            lhvm.Title = filename;
+            lhvm.Path = path;
+            return View(lhvm);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

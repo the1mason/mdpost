@@ -2,10 +2,11 @@ using System;
 
 namespace mdpost.Models
 {
-    public class ErrorViewModel
+    public class ErrorViewModel : HomeViewModel
     {
-        public string RequestId { get; set; }
 
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public int? Code { get; set; }
+        public string Message { get; set; }
+        public string Description { get; set; }
     }
 }

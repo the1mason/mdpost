@@ -1,5 +1,26 @@
-﻿@{
-    ViewData["Title"] = "Error";
+﻿@model ErrorViewModel
+@{
+    ViewData["Title"] = @Model.Title + " - " + @Model.AppName;
+    ViewData["AppName"] = @Model.AppName;
+    ViewData["MenuItems"] = @Model.MenuItems;
 }
 
-<h1>An error occured</h1>
+@if (Model.Code != null)
+{
+    <h1>@Model.Code</h1>
+}
+
+@if (Model.Title != null || Model.Description != null)
+{
+    <h2>@Model.Title</h2>
+    <p>@Model.Description</p>
+}
+else
+{
+    <h2>An error occured!</h2>
+}
+
+<h3>
+<a href="/">Go to main page</a>
+</h3>
+

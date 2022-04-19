@@ -54,16 +54,18 @@ body {
 }
 
     .page-body code {
-        background: #0000000d;
+        background: #00000008;
         padding: 2px 6px 2px 6px;
         border-radius: 5px;
     }
 
     .page-body pre {
-        background: #0000000d;
+        background: #00000008;
         padding: 10px;
+        border-radius: 5px;
     }
 
         .page-body pre code {
             background: #0000;
+            padding: 0;
         }
