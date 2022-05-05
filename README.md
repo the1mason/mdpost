@@ -17,7 +17,7 @@ Run using `dotnet run --project <path>`.
 If you want to run compiled project using dll file, use `dotnet publish` command.
 
 ## Creating first post  
-- Create folder called "posts" in the same place where binaries located (/bin/posts)
+- Create folder called "posts" inside the wwwroot folder
 - Create `index.md` file
 - Done!
 - To create new post just create another file. You can reach it using it's name as route (for `contacts.md` route will be `website.com/contacts`)  
