@@ -1,33 +1,18 @@
-# mdpost
+# mdpost  
 simple static markdown renderer for blogs and simple websites
-
-## About  
-This is very simple asp.net core app for posting static markdown files.  
-There's a lot of hardcoded variables including templates, menu items, titles and other things.
-If you ACTUALLY want to use it, you can rebuild it for yourself.  
-
-## Requirements
-
-.NET Core 6 SDK - to build and run project  
-ASP.NET Core runtime - to run project
-
+# About
+This is a very simple asp.net core app for posting static markdown files.  
+There are a lot of hardcoded variables including templates, menu items, titles, and other things. If you want to use it, you can rebuild it for yourself.  
+# Requirements
+- .NET Core 6 SDK - to build and run the project  
+- ASP.NET Core runtime - to run the project  
 ## How to run?
-Download source code, modify it if you want.
-Run using `dotnet run --project <path>`.  
-If you want to run compiled project using dll file, use `dotnet publish` command.
-
-## Creating first post  
-- Create folder called "posts" inside the wwwroot folder
-- Create `index.md` file
-- Done!
-- To create new post just create another file. You can reach it using it's name as route (for `contacts.md` route will be `website.com/contacts`)  
-
-BUT you can't use nested folders for your posts (at least for now), so every post should be located in the `posts` folder.
-
-## Roadmap
-
-I am still working on this project, so that's not final version.  
-In the future I will add some features:
-
-- Nested folders
-- Simple API for posting
+- Download the source code, and modify it if you want. Run using dotnet run --project <path>.  
+- If you want to run a compiled project using the DLL file, use 
+- the "dotnet publish" command.  
+- Creating the first post  
+- Create a folder called "posts" inside the wwwroot folder  
+- Create index.md file  
+Done!  
+To create a new post just create another file. You can reach it using its name as a route (for contacts.md route will be website.com/contacts)
+BUT you can't use nested folders for your posts (at least for now), so every post should be located in the posts folder.  
