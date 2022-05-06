@@ -16,3 +16,13 @@ There are a lot of hardcoded variables including templates, menu items, titles, 
 - Done!  
 *To create a new post just create another file. You can reach it using its name as a route (for contacts.md route will be website.com/contacts)
 BUT you can't use nested folders for your posts (at least for now), so every post should be located in the posts folder.*  
+  
+# To do  
+  - [ ] Static HTML generation instead of dynamic rendering every time
+  - [ ] Multiple DB support using Dapper with automatic migrations (MySQL, PostgreSQL, SQLi)
+  - [ ] RESTFul API
+  - [ ] Add dark theme
+  - [ ] Add CSS for each markup element (tables, checkboxes, etc.)
+  - [ ] Docker support
+  - [ ] Move configs to appsettings.json file
+  - [ ] Request caching
