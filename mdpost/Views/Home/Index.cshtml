@@ -2,9 +2,7 @@
 @using System.IO
 @using Westwind.AspNetCore.Markdown
 @{
-    ViewData["Title"] = @Model.Title + " - " + @Model.AppName;
-    ViewData["AppName"] = @Model.AppName;
-    ViewData["MenuItems"] = @Model.MenuItems;
+    ViewData["Title"] = @Model.Title;
 }
 
 @Markdown.ParseHtmlStringFromFile(Model.Path)
