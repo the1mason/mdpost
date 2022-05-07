@@ -11,22 +11,7 @@
 </head>
 <body class="layout">
     <header>
-        <nav class="navbar navbar-light navbar-expand-md" id="menu">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">@ViewData["AppName"]</a>
-                <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <div class="collapse navbar-collapse" id="navcol-1">
-                    <ul class="navbar-nav">
-                        @foreach ((string text,string link) pair in (ViewData["MenuItems"] as List<(string,string)>))
-                        {
-                            <li class="nav-item"><a class="nav-link" href="@pair.link">@pair.text</a></li>
-                        }
-                    </ul>
-                </div>
-            </div>
-        </nav>
+        @await Html.PartialAsync("_Header")
     </header>
     <div class="container">
         <div class="row">

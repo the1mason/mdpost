@@ -1,0 +1,16 @@
+﻿<nav class="navbar navbar-light navbar-expand-md" id="menu">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">@Program.config.AppName</a>
+        <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
+            <i class="fa fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navcol-1">
+            <ul class="navbar-nav">
+                @foreach ((string text, string link) pair in Program.config.MenuItems)
+                {
+                    <li class="nav-item"><a class="nav-link" href="@pair.link">@pair.text</a></li>
+                }
+            </ul>
+        </div>
+    </div>
+</nav>
