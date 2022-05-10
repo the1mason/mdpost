@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @if(String.IsNullOrWhiteSpace(ViewData["Title"] as string))
+    @if(!String.IsNullOrWhiteSpace(ViewData["Title"] as string))
     {
         <title>@Program.config.AppName - @ViewData["Title"]</title>
     }

@@ -5,15 +5,18 @@
     ViewData["MenuItems"] = @Model.MenuItems;
 }
 
-@if (Model.Code != null)
+@if (Model.Code != null && Model.Title== null)
 {
-    <h1>@Model.Code</h1>
+    <h1><b>@Model.Code</b></h1>
+}
+else if (Model.Title != null)
+{
+    <h1><b>@Model.Code</b> @Model.Title</h1>
 }
 
-@if (Model.Title != null || Model.Description != null)
+@if (Model.Description != null)
 {
-    <h2>@Model.Title</h2>
-    <p>@Model.Description</p>
+    <h2>@Model.Description</h2>
 }
 else
 {
@@ -21,6 +24,6 @@ else
 }
 
 <h3>
-<a href="/">Go to main page</a>
+<a href="/">Home</a>
 </h3>
 
