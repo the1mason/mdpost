@@ -1,26 +1,15 @@
-# ✨ the1mason
-##### *Code things sometimes. Most of the time...*
+# 🐹 Welcome to MdPost!
+##### Change index.md file (`wwwroot/posts/index.md`) to change this page view
 ____
 
-#### **Welcome!**  
-##### My name is **Vladislav**. 
-- **C# .NET** developer.  
-- Currently learning **GO**.  
-- Experienced in **HTML/CSS**.  
-- **WorldSkillsRussia** Software solutions for busines regional winner / finalist  
+#### **Useful links**  
+- [Markdown syntax](//www.markdownguide.org/basic-syntax/)
+- [GitHub repo](//github.com/the1mason/mdpost)
       
-<br>  
+#### **Add your first post**  
+- Create `<filename>.md` file in `wwwroot/posts/`
+- Now you can check this file visiting `website.com/<filename>`
 
-#### You can also check:
-##### - [My projects](projects)
-##### - [Blog](blog)
-##### - [Contacts](contacts)
-
-`test code`
-
-```csharp
-public static void Main(string[] args)
-{
-    Console.WriteLine(">:D");
-}
-```
+#### **Configute application**
+- Go to application folder
+- Edit vconfig.json file
