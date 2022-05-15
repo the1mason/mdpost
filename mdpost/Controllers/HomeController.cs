@@ -47,6 +47,7 @@ namespace mdpost.Controllers
             lhvm.Path = path;
             string filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
             filename = filename.Replace(filename[0], char.ToUpper(filename[0]));
+            filename = filename.Replace("_", " ");
             lhvm.Title = filename;
             return View(lhvm);
         }
