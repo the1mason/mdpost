@@ -1,11 +1,7 @@
-﻿using System.Collections.Generic;
-using System;
+﻿namespace mdpost.Models;
 
-namespace mdpost.Models
+public class HomeViewModel
 {
-    public class HomeViewModel
-    {
-        public string Title { get; set; }
-        public string? Path = null;
-    }
+    public string Title { get; set; }
+    public string? Path = null;
 }
