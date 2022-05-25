@@ -16,54 +16,42 @@ namespace mdpost.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IWebHostEnvironment _environment;
-        private HomeViewModel hvm;
 
         public HomeController(ILogger<HomeController> logger, IWebHostEnvironment environment)
         {
             _logger = logger;
             _environment = environment;
-            hvm = new();
-            hvm.AppName = Program.config.AppName;
-            hvm.MenuItems = Program.config.MenuItems;
         }
 
         public IActionResult Index()
         {
             var path = $"~/posts/index.md";
-            HomeViewModel lhvm = new();
-            lhvm = hvm;
+            HomeViewModel homeModel = new();
             if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
             {
                 return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
                 {
-                    MenuItems = lhvm.MenuItems,
-                    AppName = lhvm.AppName,
                     Title = "Error",
                     Code = 404,
                     Message = "Index file not found!",
-                    Description = "Can't find index.md file"
+                    Description = "Create a file named index.md in the /wwwroot/posts folder."
                 });
             }
-            lhvm.Path = path;
-            string filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
-            filename = filename.Replace(filename[0], char.ToUpper(filename[0]));
-            lhvm.Title = filename;
-            return View(lhvm);
+            homeModel.Path = path;
+            homeModel.Title = "";
+            return View(homeModel);
         }
 
         [Route("{mdname}")]
         public IActionResult Index(string mdname)
         {
-            HomeViewModel lhvm = new();
-            lhvm = hvm;
+            HomeViewModel homeModel = new();
             var path = $"~/posts/{mdname}.md";
             ViewData["MarkdownFile"] = path;
             if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
             {
                 return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
                 {
-                    MenuItems = lhvm.MenuItems,
-                    AppName = lhvm.AppName,
                     Title = "Error",
                     Code = 404,
                     Message = "File not found!",
@@ -73,9 +61,9 @@ namespace mdpost.Controllers
             string filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
             filename = filename[0].ToString().ToUpper() + filename.Substring(1);
             filename = filename.Replace('_', ' ');
-            lhvm.Title = filename;
-            lhvm.Path = path;
-            return View(lhvm);
+            homeModel.Title = filename;
+            homeModel.Path = path;
+            return View(homeModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

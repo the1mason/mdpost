@@ -30,7 +30,7 @@ namespace mdpost.Utils
             var model = new Models.ConfigModel();
             model.AppUrls = new string[] { "http://mdpost.mdpost:5030" };
             model.AppName = "MdPost";
-            model.MenuItems = new List<(string text, string link)>() { new("Home", "/"), new("GitHub", "//github.com/mdpost") };
+            model.MenuItems = new List<(string text, string link)>() { new("Home", "/"), new("GitHub", "//github.com/the1mason/mdpost") };
             using (System.IO.StreamWriter sw = new(path, false))
             {
                 sw.Write(JsonConvert.SerializeObject(model));
