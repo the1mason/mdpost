@@ -19,7 +19,7 @@ public class LogMiddleware
 
     public async Task InvokeAsync(HttpContext httpContext)
     {
-        _logger.LogInformation($"{DateTime.Now.ToString("yy/MM/dd HH:mm:ss")} {httpContext.Request.Headers["X-Forwarded-For"]} -> {httpContext.Request.Path}");
+        _logger.LogInformation($"{httpContext.Request.Headers["X-Forwarded-For"]} -> {httpContext.Request.Path}");
         await this._next(httpContext);
     }
 }
