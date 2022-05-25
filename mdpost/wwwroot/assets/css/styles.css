@@ -1,5 +1,5 @@
 ::selection {
-    background: #3721ff;
+    background: #ff6c5c;
     color: #fff;
 }
 
@@ -42,11 +42,11 @@ body {
 }
 
 .layout a {
-    color: #3721ff;
+    color: #ff6c5c;
 }
 
     .layout a:hover {
-        color: #2916db;
+        color: #d33e2d;
     }
 
 .page-body {
@@ -69,3 +69,19 @@ body {
             background: #0000;
             padding: 0;
         }
+
+.page-body em {
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 770px) {
+    .page-body img {
+        width: 100%;
+    }
+}
+@media screen and (min-width: 770px) {
+    .page-body img {
+        width: 60%;
+    }
+}
