@@ -15,21 +15,7 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        var path = $"~/posts/index.md";
-        HomeViewModel homeModel = new();
-        if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
-        {
-            return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
-            {
-                Title = "Error",
-                Code = 404,
-                Message = "Index file not found!",
-                Description = "Create a file named index.md in the /wwwroot/posts folder."
-            });
-        }
-        homeModel.Path = path;
-        homeModel.Title = "";
-        return View(homeModel);
+        return Index("index");
     }
 
     [Route("{mdname}")]
@@ -48,9 +34,13 @@ public class HomeController : Controller
                 Description = "Can't find specified file"
             });
         }
-        string filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
-        filename = filename[0].ToString().ToUpper() + filename.Substring(1);
-        filename = filename.Replace('_', ' ');
+        string filename = "";
+        if (mdname != "index")
+        {
+            filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
+            filename = filename[0].ToString().ToUpper() + filename.Substring(1);
+            filename = filename.Replace('_', ' ');
+        }
         homeModel.Title = filename;
         homeModel.Path = path;
         return View(homeModel);
