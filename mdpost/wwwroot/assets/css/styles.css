@@ -1,10 +1,54 @@
+/*Color palette*/
+:root {
+    --accent-color: #83a9f0;
+    --code-color: #83a9f0;
+    --accent-color-dark: #6586c4;
+    --background-color: #31353f;
+    --text-color: #fff;
+    --selection-text-color: #fff;
+    --background-accent-color: #ffffff0f;  
+    --scrollbar-background: var(--background-color);
+    --scrollbar-thumb-background: #ffffff3f;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --accent-color: #ff6c5c;
+        --code-color: #ff6c5c;
+        --accent-color-dark: #d33e2d;
+        --background-color: #ffffff;
+        --text-color: rgb(0, 0, 0);
+        --selection-text-color: #fff;
+        --background-accent-color: #ff6c5c15;
+        --scrollbar-background: var(--background-color);
+        --scrollbar-thumb-background: #00000046;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+    background-color: var(--scrollbar-background);
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-background);
+}
+
 ::selection {
-    background: #ff6c5c;
-    color: #fff;
+    background: var(--accent-color);
+    color: var(--selection-text-color);
 }
 
 body {
     font-family: 'Roboto';
+    background: var(--background-color) !important;
+}
+
+p, h1, h2, h3, h4, h5, h6, code, ul, ol, li, div, em, hr {
+    color: var(--text-color);
+}
+
+hr {
+    color: #fff !important;
 }
 
 #menu {
@@ -13,7 +57,7 @@ body {
 }
 
     #menu .navbar-brand {
-        color: #000;
+        color: var(--text-color);
         font-weight: 800;
         font-family: 'Roboto';
         margin-bottom: 1px;
@@ -23,30 +67,31 @@ body {
         border: none;
         padding: 0;
         font-size: 20px;
-        color: #000;
+        color: var(--text-color);
         box-shadow: none;
     }
 
         #menu .navbar-toggler:focus {
-            color: #000a;
+            color: var(--text-color);
         }
 
     #menu .nav-link {
-        color: #000;
+        color: var(--text-color);
         font-family: 'Roboto';
     }
 
 #bottombar p {
     padding: 10px;
-    color: #9a9a9a;
+    color: var(--text-color);
+    opacity: 0.5;
 }
 
 .layout a {
-    color: #ff6c5c;
+    color: var(--accent-color);
 }
 
     .layout a:hover {
-        color: #d33e2d;
+        color: var(--accent-color-dark);
     }
 
 .page-body {
@@ -54,19 +99,21 @@ body {
 }
 
     .page-body code {
-        background: #00000008;
+        background: var(--background-accent-color);
         padding: 2px 6px 2px 6px;
         border-radius: 5px;
+        color: var(--code-color);
     }
 
     .page-body pre {
-        background: #00000008;
+        background: var(--background-accent-color);
         padding: 10px;
         border-radius: 5px;
+        color: var(--code-color);
     }
 
         .page-body pre code {
-            background: #0000;
+            background: transparent;
             padding: 0;
         }
 

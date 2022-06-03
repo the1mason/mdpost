@@ -13,14 +13,11 @@ public class HomeController : Controller
         _environment = environment;
     }
 
-    public IActionResult Index()
-    {
-        return Index("index");
-    }
-
-    [Route("{mdname}")]
+    [Route("{**mdname}")]
     public IActionResult Index(string mdname)
     {
+        if (mdname == null)
+            mdname = "index";
         HomeViewModel homeModel = new();
         var path = $"~/posts/{mdname}.md";
         ViewData["MarkdownFile"] = path;
