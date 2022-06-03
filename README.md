@@ -18,11 +18,12 @@ There are a lot of hardcoded variables including templates, menu items, titles, 
 BUT you can't use nested folders for your posts (at least for now), so every post should be located in the posts folder.*  
   
 # To do  
-  - [ ] Static HTML generation instead of dynamic rendering every time
-  - [ ] Multiple DB support using Dapper with automatic migrations (MySQL, PostgreSQL, SQLi)
-  - [ ] RESTFul API
-  - [ ] Add dark theme
+
+  - [x] Add dark theme
   - [ ] Add CSS for each markup element (tables, checkboxes, etc.)
   - [ ] Docker support
   - [ ] Move configs to appsettings.json file
-  - [ ] Request caching
+  - [ ] ~~Request caching~~ Caching can be done using reverse proxy. You don't want to put this app directly to the internet anyway.
+  - [ ] ~~Static HTML generation instead of dynamic rendering every time~~ Feature is basically useless for now
+  - [ ] ~~Multiple DB support using Dapper with automatic migrations (MySQL, PostgreSQL, SQLi)~~ Too complicated for this app. We're trying to keep it simple
+  - [ ] ~~RESTFul API~~ Probably later. You can just use ftp.
