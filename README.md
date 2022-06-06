@@ -1,7 +1,7 @@
 # mdpost  
-simple static markdown renderer for blogs and simple websites
+simple static markdown renderer for general purposes
 # About
-This is a very simple asp.net core app for posting static markdown files.  
+This is a very simple ASP.NET core app for posting static markdown files.  
 There are a lot of hardcoded variables including templates, menu items, titles, and other things. If you want to use it, you can rebuild it for yourself.  
 # Requirements
 - .NET Core 6 SDK - to build and run the project  
@@ -19,11 +19,11 @@ BUT you can't use nested folders for your posts (at least for now), so every pos
   
 # To do  
 
-  - [x] Add dark theme
+  - [x] Add a dark theme
   - [ ] Add CSS for each markup element (tables, checkboxes, etc.)
   - [ ] Docker support
   - [ ] Move configs to appsettings.json file
   - [ ] ~~Request caching~~ Caching can be done using reverse proxy. You don't want to put this app directly to the internet anyway.
-  - [ ] ~~Static HTML generation instead of dynamic rendering every time~~ Feature is basically useless for now
+  - [ ] ~~Static HTML generation instead of dynamic rendering every time~~ Feature is useless for now
   - [ ] ~~Multiple DB support using Dapper with automatic migrations (MySQL, PostgreSQL, SQLi)~~ Too complicated for this app. We're trying to keep it simple
-  - [ ] ~~RESTFul API~~ Probably later. You can just use ftp.
+  - [ ] ~~RESTFul API~~ Probably later. You can just use FTP.
