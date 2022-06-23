@@ -12,6 +12,7 @@ There are a lot of hardcoded variables including templates, menu items, titles, 
 # To do  
 
   - [x] Add a dark theme
+  - [x] Add syntax highlight 
   - [ ] Add CSS for each markup element (tables, checkboxes, etc.)
   - [ ] Docker support
   - [ ] Move configs to appsettings.json file
