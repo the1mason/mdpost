@@ -94,26 +94,25 @@ hr {
         color: var(--accent-color-dark);
     }
 
+    body code {
+        color: var(--code-color);
+    }
+
 .page-body {
     font-family: 'Roboto';
 }
 
     .page-body code {
-        background: var(--background-accent-color);
         padding: 2px 6px 2px 6px;
         border-radius: 5px;
-        color: var(--code-color);
     }
 
     .page-body pre {
-        background: var(--background-accent-color);
         padding: 10px;
         border-radius: 5px;
-        color: var(--code-color);
     }
 
         .page-body pre code {
-            background: transparent;
             padding: 0;
         }
 

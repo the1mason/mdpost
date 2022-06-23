@@ -2,7 +2,9 @@
 ##### Change index.md file (`wwwroot/posts/index.md`) to change this page view
 ____
 
-#### Now supporta dark theme `bugs included 😅`
+#### [Check out new syntax highlighting feature](/code)
+
+#### Now supports dark theme `bugs included 😅`
 
 #### **Useful links**  
 - [Markdown syntax](//www.markdownguide.org/basic-syntax/)
