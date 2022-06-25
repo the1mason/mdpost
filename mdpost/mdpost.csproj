@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
+    <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
+    <AssemblyVersion>1.3.1</AssemblyVersion>
+    <FileVersion>1.3.1</FileVersion>
+    <Version>1.3.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
