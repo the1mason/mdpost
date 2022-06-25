@@ -35,6 +35,8 @@ public class HomeController : Controller
         if (mdname != "index")
         {
             filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
+            string[] filenameArr = filename.Split('/');
+            filename = filenameArr[filenameArr.Length - 1];
             filename = filename[0].ToString().ToUpper() + filename.Substring(1);
             filename = filename.Replace('_', ' ');
         }

@@ -6,7 +6,7 @@
     --background-color: #31353f;
     --text-color: #fff;
     --selection-text-color: #fff;
-    --background-accent-color: #ffffff0f;  
+    --background-accent-color: #ffffff0f;
     --scrollbar-background: var(--background-color);
     --scrollbar-thumb-background: #ffffff3f;
 }
@@ -29,6 +29,7 @@
     width: 15px;
     background-color: var(--scrollbar-background);
 }
+
 ::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-thumb-background);
 }
@@ -94,21 +95,19 @@ hr {
         color: var(--accent-color-dark);
     }
 
-    body code {
-        color: var(--code-color);
-    }
+body code {
+    color: var(--code-color);
+}
 
 .page-body {
     font-family: 'Roboto';
 }
 
     .page-body code {
-        padding: 2px 6px 2px 6px;
         border-radius: 5px;
     }
 
     .page-body pre {
-        padding: 10px;
         border-radius: 5px;
     }
 
@@ -116,16 +115,17 @@ hr {
             padding: 0;
         }
 
-.page-body em {
-    font-weight: normal;
-    opacity: 0.9;
-}
+    .page-body em {
+        font-weight: normal;
+        opacity: 0.9;
+    }
 
 @media screen and (max-width: 770px) {
     .page-body img {
         width: 100%;
     }
 }
+
 @media screen and (min-width: 770px) {
     .page-body img {
         width: 60%;
