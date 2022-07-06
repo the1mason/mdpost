@@ -13,7 +13,7 @@ public static class ConfigUtils
             string content = System.IO.File.ReadAllText(path);
             var model = JsonConvert.DeserializeObject<Models.ConfigModel>(content);
             if (model.AppUrls == null || model.AppUrls.Length == 0)
-                model.AppUrls = new string[] { "http://mdpost.mdpost:5030" };
+                model.AppUrls = new string[] { "http://*:80" };
             if (string.IsNullOrEmpty(model.AppName))
                 model.AppName = "MdPost";
             return model;
@@ -27,9 +27,10 @@ public static class ConfigUtils
     private static Models.ConfigModel CreateDefaultConfig(string path)
     {
         var model = new Models.ConfigModel();
-        model.AppUrls = new string[] { "http://mdpost.mdpost:5030" };
+        model.AppUrls = new string[] { "http://*:80" };
         model.AppName = "MdPost";
         model.MenuItems = new List<(string text, string link)>() { new("Home", "/"), new("GitHub", "//github.com/the1mason/mdpost") };
+        model.EnableBreadcrumbs = true;
         using (System.IO.StreamWriter sw = new(path, false))
         {
             sw.Write(JsonConvert.SerializeObject(model));

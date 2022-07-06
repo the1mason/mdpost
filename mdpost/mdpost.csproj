@@ -3,12 +3,16 @@
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <ApplicationIcon>wwwroot\favicon.ico</ApplicationIcon>
-    <AssemblyVersion>1.3.1</AssemblyVersion>
-    <FileVersion>1.3.1</FileVersion>
-    <Version>1.3.1</Version>
+    <AssemblyVersion>1.4</AssemblyVersion>
+    <FileVersion>1.4</FileVersion>
+    <Version>1.4</Version>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Authors>the1mason</Authors>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="Westwind.AspNetCore.Markdown" Version="3.8.0" />
   </ItemGroup>

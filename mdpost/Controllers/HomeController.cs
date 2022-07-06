@@ -1,6 +1,7 @@
 ﻿using mdpost.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using System.IO;
 
 namespace mdpost.Controllers;
@@ -18,9 +19,9 @@ public class HomeController : Controller
     {
         if (mdname == null)
             mdname = "index";
-        HomeViewModel homeModel = new();
+        
         var path = $"~/posts/{mdname}.md";
-        ViewData["MarkdownFile"] = path;
+        
         if (!System.IO.File.Exists(Path.Combine(_environment.WebRootPath, path.Substring(2))))
         {
             return View("~/Views/Shared/Error.cshtml", new ErrorViewModel
@@ -32,16 +33,21 @@ public class HomeController : Controller
             });
         }
         string filename = "";
+        string bc = "";
+
         if (mdname != "index")
         {
-            filename = path.Substring(2).Replace("posts/", "").Replace(".md", "");
-            string[] filenameArr = filename.Split('/');
-            filename = filenameArr[filenameArr.Length - 1];
-            filename = filename[0].ToString().ToUpper() + filename.Substring(1);
-            filename = filename.Replace('_', ' ');
+            filename = Utils.StringUtil.TitleFromFilename(path);
+            bc = Utils.StringUtil.BreadcrumbsHTMLFromFilename(path);
         }
-        homeModel.Title = filename;
-        homeModel.Path = path;
+
+        HomeViewModel homeModel = new()
+        {
+            Title = filename,
+            Path = path,
+            breadcrumbs = bc
+        };
+        
         return View(homeModel);
     }
 

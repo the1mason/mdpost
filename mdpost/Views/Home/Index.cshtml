@@ -5,4 +5,10 @@
     ViewData["Title"] = @Model.Title;
 }
 
+@if (@Program.config.EnableBreadcrumbs)
+{
+    @Html.Raw(@Model.breadcrumbs)
+}
+
+
 @Markdown.ParseHtmlStringFromFile(Model.Path)
