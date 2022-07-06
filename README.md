@@ -5,8 +5,8 @@ simple static markdown renderer for general purposes
 
 `docker pull the1mason/mdpost:latest`
 
-Added and enabled docker support. For now mdpost requires editing files in the container manually.  
-I will add admin panel for editing files, menu items and website name in browser in next releases.
+Added and enabled docker support. For now, mdpost requires editing files in the container manually.  
+You can also create a volume for the container with path `/app/wwwroot/posts` to store your .md files separately.
 
 # About
 This is a very simple ASP.NET core app for posting static markdown files.  
